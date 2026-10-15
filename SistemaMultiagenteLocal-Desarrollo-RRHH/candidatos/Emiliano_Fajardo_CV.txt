@@ -1,0 +1,6 @@
+Nombre: Emiliano Fajardo
+Perfil: Desarrollador Frontend. 
+Experiencia: 2 años haciendo APIs. 
+Tecnologías: Node.js, Express, MongoDB, JavaScript. 
+Metodologías: Scrum básico. 
+Idiomas: Inglés intermedio.
