@@ -1,0 +1,64 @@
+/* Sidebar de Historial */
+.sidebar {
+    width: 0; /* Oculto inicialmente */
+    height: 100vh;
+    background-color: #060919;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 10;
+}
+
+/* Estado Expandido del Sidebar */
+.app-wrapper.sidebar-open .sidebar {
+    width: 260px; 
+}
+
+/* Ajuste de escala/espacio del área principal */
+.app-wrapper.sidebar-open .main-content {
+    width: calc(100vw - 260px);
+}
+
+/* Estilos internos del Sidebar */
+.sidebar-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e0e6ed;
+}
+
+.history-list {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.history-item {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: #a0aec0;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.2s ease;
+}
+
+.history-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}

@@ -1,0 +1,99 @@
+/* Posicion del logo */
+.welcome-screen {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    z-index: 2;
+}
+
+/* Red de nodos / constelación sutil de fondo */
+.network-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sparkle-star {
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.bars-logo {
+    display: flex;
+    align-items: flex-start; /* Alineación desde la parte superior para controlar el desplazamiento relativo */
+    gap: 12px;
+    height: 160px;
+    padding-top: 10px;
+}
+
+.bar {
+    position: relative; /* Necesario para posicionar la estela (::after) */
+    width: 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #ff5e36 0%, #ff1e27 60%, #cc0d13 100%);
+    box-shadow: 0 0 12px rgba(255, 60, 40, 0.4);
+    transition: all 0.3s ease;
+}
+
+.bar::after {
+    content: '';
+    position: absolute;
+    top: 70px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px; 
+    height: 0;  /* Invisible en reposo */
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+    
+    border-radius: 2px;
+    opacity: 0;
+    transition: height 0.4s ease-out, opacity 0.3s ease-out;
+}
+
+.bar-1 { height: 75px; transform: translateY(65px);}
+.bar-2 { height: 95px; transform: translateY(20px);}
+.bar-3 { height: 110px; transform: translateY(0);}
+.bar-4 { height: 95px; transform: translateY(25px);}
+.bar-5 { height: 75px; transform: translateY(70px);}
+
+/* Animación de despegar tipo cohete */
+@keyframes rocketLaunchWithTrail {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    20% {
+        /* Toma impulso bajando un poco y agrandándose */
+        transform: translate(-50%, calc(-50% + 30px)) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        /* Despega disparado hacia arriba llevando la estela consigo */
+        transform: translate(-50%, -180vh) scale(1.1);
+        opacity: 0;
+    }
+}
+
+/* Clase JavaScript al momento de enviar */
+.launching {
+    animation: rocketLaunchWithTrail 2.5s cubic-bezier(0.45, 0, 0.15, 1) forwards;
+}
+
+.launching .bar::after {
+    height: 250px; /* Longitud de la estela visible */
+    opacity: 1;
+}

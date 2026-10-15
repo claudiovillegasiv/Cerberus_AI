@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente Orquestador - Chat</title>
+    <!-- FontAwesome para los íconos de la barra inferior -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/Cerberus_AI_ico.svg">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/bottom-bar.css">
+    <link rel="stylesheet" href="css/modals.css">
+</head>
+<body>
+
+    <!-- Fondo dinámico / Red de nodos -->
+    <div class="network-bg"></div>
+
+    <div class="app-wrapper" id="app-wrapper">
+	    <aside class="sidebar" id="sidebar">
+	        <div class="sidebar-header">
+	            <h3>Historial</h3>
+	            <button class="icon-btn close-sidebar" id="btn-close-sidebar">
+	                <i class="fa-solid fa-xmark"></i>
+	            </button>
+	        </div>
+	        <div class="history-list">
+	            <div class="history-item"><i class="fa-regular fa-message"></i> Consulta Orquestador</div>
+	            <div class="history-item"><i class="fa-regular fa-message"></i> Análisis de Datos</div>
+	        </div>
+	    </aside>
+	
+	    <div class="main-content">
+	        <main class="chat-container" id="chat-container">
+	            <div class="welcome-screen" id="welcome-screen">
+	                <div class="sparkle-star">✦</div>
+	                <div class="bars-logo">
+	                    <span class="bar bar-1"></span>
+	                    <span class="bar bar-2"></span>
+	                    <span class="bar bar-3"></span>
+	                    <span class="bar bar-4"></span>
+	                    <span class="bar bar-5"></span>
+	                </div>
+	            </div>
+	            <div class="messages-list" id="messages-list"></div>
+	        </main>
+	        
+	        <div class="agents-modal" id="agents-modal">
+			    <div class="agents-modal-header">
+			        <h4><i class="fa-solid fa-robot"></i> Agentes Disponibles</h4>
+			        <button class="close-modal-btn" id="close-modal-btn">&times;</button>
+			    </div>
+			    <div class="agents-list">
+			        <div class="agent-card active">
+			            <i class="fa-solid fa-brain"></i>
+			            <div class="agent-info">
+			                <span class="agent-name">Devs</span>
+			                <span class="agent-desc">Agente para el area de desarrollo</span>
+			            </div>
+			        </div>
+			        <div class="agent-card">
+			            <i class="fa-solid fa-brain"></i>
+			            <div class="agent-info">
+			                <span class="agent-name">ADS</span>
+			                <span class="agent-desc">Agente para el area de ADS</span>
+			            </div>
+			        </div>
+			        <div class="agent-card">
+			            <i class="fa-solid fa-brain"></i>
+			            <div class="agent-info">
+			                <span class="agent-name">RH</span>
+			                <span class="agent-desc">Agente para el area de recursos humanos</span>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+	
+	        <footer class="bottom-bar">
+	            <button class="icon-btn" id="btn-sidebar" title="Menú">
+	                <i class="fa-solid fa-bars"></i>
+	            </button>
+	            <button class="icon-btn logo-btn" id="btn-agentes" title="Agente">
+				    <img src="img/Cerberus_AI.svg" alt="Logo Personal" class="personal-logo-img">
+				</button>
+	            <form class="input-form" id="chat-form">
+	                <textarea id="user-input" class="chat-input" placeholder="¿Cómo te puedo ayudar hoy?" rows="1" required></textarea>
+	                <button type="submit" class="send-btn" id="send-btn" title="Enviar">
+	                    <i class="fa-solid fa-arrow-up"></i>
+	                </button>
+	            </form>
+	            <button class="icon-btn" title="Configuración">
+	                <i class="fa-solid fa-gear"></i>
+	            </button>
+	            <button class="icon-btn profile-btn" title="Perfil">
+	                <i class="fa-regular fa-user"></i>
+	            </button>
+	        </footer>
+	    </div>
+	</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
