@@ -20,10 +20,12 @@ public class OrquestadorController {
     private EnrutadorService enrutador;
 
 
-    @PostMapping(value = "/procesar", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/procesar", 
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.TEXT_PLAIN_VALUE + ";charset=UTF-8")
     public String procesarPeticion(
-            @RequestParam("prompt") String prompt,
-            @RequestParam(value = "archivo", required = false) MultipartFile archivo) {
+       @RequestParam("prompt") String prompt,
+       @RequestParam(value = "archivo", required = false) MultipartFile archivo) {
        
         try {
             String promptParaClasificar = prompt;
