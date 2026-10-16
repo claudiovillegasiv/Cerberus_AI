@@ -64,11 +64,11 @@
 		    <version>0.35.0</version>
 		</dependency>
 		
-		<!-- Cliente específico para conectar con Ollama -->
+		<!-- Cliente especifico para conectar con Gemini -->
 		<dependency>
 		    <groupId>dev.langchain4j</groupId>
-		    <artifactId>langchain4j-ollama-spring-boot-starter</artifactId>
-		    <version>0.35.0</version>
+		    <artifactId>langchain4j-google-ai-gemini</artifactId>
+		    <version>0.35.0</version> <!-- Verifica la version que coincida con tu proyecto -->
 		</dependency>
 	</dependencies>
 
