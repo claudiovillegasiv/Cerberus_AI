@@ -15,7 +15,7 @@ public class EnrutadorService {
         switch (departamento) {
                 
             case "Desarrollo de software":
-                String urlMicroservicioDesarrollo = "http://localhost:8081/api/desarrollo/resolver";
+                String urlMicroservicioDesarrollo = "http://10.128.4.93:8081/api/desarrollo/resolver";
                 
                 try {
                     System.out.println("Redirigiendo petición vía HTTP al Microservicio de Desarrollo...");
@@ -26,18 +26,10 @@ public class EnrutadorService {
                 }
                 
             case "QA":
-            	String urlMicroservicioQA = "http://localhost:8083/api/qa/auditar";
-                
-                try {
-                    System.out.println("Redirigiendo petición vía HTTP al Microservicio de QA...");
-                    ResponseEntity<String> respuesta = restTemplate.postForEntity(urlMicroservicioQA, prompt, String.class);
-                    return respuesta.getBody();
-                } catch (Exception e) {
-                    return "[Error] El microservicio de QA está apagado o inaccesible: " + e.getMessage();
-                }
+                return "[Ruta: QA] -> Preparando escenario de pruebas y control de calidad...";
                 
             case "Recursos humanos":
-            	String urlMicroservicioRRHH = "http://localhost:8082/api/rrhh/consultar";
+            	String urlMicroservicioRRHH = "http://10.128.4.93:8082/api/rrhh/consultar";
                 
                 try {
                     System.out.println("Redirigiendo petición vía HTTP al Microservicio de Recursos Humanos...");
