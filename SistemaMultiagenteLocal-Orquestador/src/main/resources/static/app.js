@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var textDiv = document.createElement('div');
+        textDiv.style.whiteSpace = 'pre-wrap';
         textDiv.textContent = text;
         msgDiv.appendChild(textDiv);
 
