@@ -1,0 +1,101 @@
+/* Barra inferior */
+.bottom-bar {
+    position: relative;
+    z-index: 3;
+    background-color: #060919;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.input-form {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Mantiene el botón de enviar alineado abajo */
+}
+
+.chat-input {
+    width: 100%;
+    min-height: 48px;
+    max-height: 150px; /* Altura máxima antes de activar scroll */
+    padding: 12px 50px 12px 20px; /* Espacio a la derecha para no pisar el botón */
+    border-radius: 24px;
+    border: none;
+    background-color: #c7d2de;
+    color: #0b0f28;
+    font-size: 15px;
+    font-family: inherit;
+    line-height: 1.4;
+    outline: none;
+    resize: none; /* Desactiva el manejador manual de tamaño */
+    overflow-y: auto; /* Activa scroll si supera los 150px */
+    box-sizing: border-box;
+    transition: height 0.15s ease, border-radius 0.15s ease;
+}
+
+.chat-input::placeholder {
+    color: #3b4b60;
+}
+
+.send-btn {
+    position: absolute;
+    right: 8px;
+    bottom: 7px; /* Alineado al borde inferior del textarea */
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background-color: #0b0f28;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.1s ease;
+}
+
+.send-btn:active {
+    transform: scale(0.92);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.icon-btn.logo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.personal-logo-img {
+    height: 24px; 
+    width: auto;
+    filter: brightness(0) invert(1); /* Convierte el logo a blanco puro */
+    opacity: 0.85; /* Mismo nivel de opacidad base que los iconos de FontAwesome */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn.logo-btn:hover .personal-logo-img {
+    opacity: 1; /* Se vuelve totalmente opaco, igual que los otros iconos */
+    transform: scale(2); /* Efecto sutil de agrandamiento al pasar el cursor */
+    filter: drop-shadow(0 0 4px #ffffff);
+}
+
+.icon-btn:hover {
+	color: #ff5e36;
+    opacity: 1;
+}

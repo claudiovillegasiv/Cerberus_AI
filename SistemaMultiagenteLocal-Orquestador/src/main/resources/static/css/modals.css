@@ -1,0 +1,97 @@
+/* Pop-up de Agentes */
+.agents-modal {
+    position: absolute;
+    bottom: 80px; 
+    left: 70px;   
+    width: 280px;
+    background-color: #0d132b;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    z-index: 100;
+    /* Estado inicial: oculto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Estado visible al hacer clic */
+.agents-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.agents-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.agents-modal-header h4 {
+    font-size: 14px;
+    color: #e0e6ed;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    color: #ffffff;
+}
+
+.agents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.agent-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.agent-card:hover, .agent-card.active {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.agent-card i {
+    font-size: 18px;
+    color: #ff7e5f;
+}
+
+.agent-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.agent-desc {
+    font-size: 11px;
+    color: #a0aec0;
+}
