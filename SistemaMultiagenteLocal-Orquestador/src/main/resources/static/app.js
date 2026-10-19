@@ -226,4 +226,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+	
+	// 7. MENSAJE DE BIENVENIDA INICIAL
+	// Usamos un pequeño timeout para que el DOM termine de pintar el fondo antes de inyectar el mensaje
+	setTimeout(function() {
+	    // 1. Creamos la burbuja en estado de "carga"
+	    var bienvenidaId = appendMessage('Iniciando sistemas...', 'agent', true);
+	    
+	    // 2. Actualizamos la burbuja con el mensaje final y su etiqueta
+	    updateMessage(
+	        bienvenidaId, 
+	        '¡Hola! Soy Cerberus, el sistema multiagente de TASF. Mi equipo de especialistas y yo estamos en línea. ¿En qué te podemos ayudar hoy?\n'+
+			'\nPor favor ten en cuenta que estoy en fase de desarrollo, por lo que te pido amablemente que seas específico y directo en tu petición, si necesitas código pidelo de forma estructurada, si necesitas enviar un correo, escribe la dirección completa, si necesitas revisar algún archivo como un reporte escribe el nombre completo del archivo.\n'+
+			'\nAhora sí, comencemos :)', 
+	    );
+	}, 400);
 });
