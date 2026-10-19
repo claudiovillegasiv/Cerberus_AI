@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 1. CONFIGURACIÓN Y REFERENCIAS AL DOM
     // Ruta relativa porque el front y el back viven en el mismo servidor (Spring Boot)
-    var BACKEND_URL = '/api/agente/procesar';
+    var BACKEND_URL = 'api/agente/procesar';
 
     // Elementos del Chat
     var chatForm = document.getElementById('chat-form');
@@ -139,13 +139,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(function (error) {
             console.error('Error al conectar con el servidor:', error);
-            updateMessage(loadingMessageId, '⚠️ Ocurrió un error al comunicarse con el agente orquestador.', null);
+            updateMessage(loadingMessageId, 'Parece que ha ocurrido un error', null);
         });
     }
 
     // 5. RENDERING Y MANEJO DE MENSAJES EN LA UI
     function appendMessage(text, sender, isLoading) {
-        var msgId = 'msg-' + Date.now();
+        var msgId = 'msg-' + Date.now() + '-' + Math.floor(Math.random() * 10000);
         var msgDiv = document.createElement('div');
         msgDiv.classList.add('message', sender);
         msgDiv.id = msgId;
